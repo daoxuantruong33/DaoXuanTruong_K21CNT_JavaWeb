@@ -29,8 +29,8 @@ public class UserController {
         return userService.findAll();
     }
     @PostMapping("/user-add")
-    public ResponseEntity<String> addUser(@Valid @RequestBody UserDTO user){
+    public ResponseEntity<String> addUser(@Valid @RequestBody UserDTO user) {
         userService.create(user);
-        return ResponseEntity.badRequest().body("User created successfully");
+        return ResponseEntity.ok("User created successfully"); // Mã 200
     }
 }
