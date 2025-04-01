@@ -2,7 +2,7 @@
 <html lang="vi" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, miniom-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Danh sách sinh viên</title>
     <link rel="stylesheet"
@@ -35,9 +35,7 @@
             <td th:text="${student.age}">20</td>
             <td>
                 <a th:href="@{/students/edit/{id}(id=${student.id})}" class="btn btn-warning btn-sm">Edit</a>
-                <a th:href="@{/students/delete/{id}(id=${student.id})}"
-                   onclick="return confirm('Bạn có muốn xóa không?')"
-                   class="btn btn-danger btn-sm">Delete</a>
+                <a th:href="@{/students/delete/{id}(id=${student.id})}" onclick="return confirm('Bạn có muốn xóa không?')" class="btn btn-danger btn-sm">Delete</a>
             </td>
         </tr>
         </tbody>
