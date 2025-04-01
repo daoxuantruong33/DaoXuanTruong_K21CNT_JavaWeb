@@ -29,6 +29,7 @@ public class StudentController {
     @GetMapping("/edit/{id}")
     public String showFormForUpdate(@PathVariable(value = "id") Long id, Model model){
         StudentDTO student = studentService.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid student Id:" + id));
+
         model.addAttribute("student", student);
         return "students/student-edit";
     }
