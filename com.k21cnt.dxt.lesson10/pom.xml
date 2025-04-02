@@ -8,10 +8,10 @@
 		<version>3.4.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.k21cnt.dxt.lesson09</groupId>
-	<artifactId>com.k21cnt.dxt.lesson09</artifactId>
+	<groupId>com.k21cnt.dxt.lesson10</groupId>
+	<artifactId>com.k21cnt.dxt.lesson10</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>com.k21cnt.dxt.lesson09</name>
+	<name>com.k21cnt.dxt.lesson10</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
