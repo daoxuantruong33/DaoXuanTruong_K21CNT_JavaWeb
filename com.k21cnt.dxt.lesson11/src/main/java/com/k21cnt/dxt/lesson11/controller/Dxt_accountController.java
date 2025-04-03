@@ -21,24 +21,24 @@ public class Dxt_accountController {
     }
     @GetMapping("/add-new")
     public String addNewDxt_account (Model model){
-        model.addAttribute("dxt_accounts", new Dxt_account());
+        model.addAttribute("dxt_account", new Dxt_account());
         return "dxt_accounts/dxt_accounts-add";
     }
     @GetMapping("/edit/{id}")
     public String showFormForUpdate(@PathVariable(value = "id") Long id, Model model){
-        Dxt_accountDTO employee = dxt_accountService.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid student Id:" + id));
+        Dxt_accountDTO dxt_account = dxt_accountService.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid student Id:" + id));
 
-        model.addAttribute("dxt_accounts", employee);
+        model.addAttribute("dxt_account", dxt_account);
         return "dxt_accounts/dxt_accounts-edit";
     }
     @PostMapping
-    public String saveDxt_account (@ModelAttribute("dxt_accounts") Dxt_accountDTO dxtAccount){
-        dxt_accountService.save(dxtAccount);
+    public String saveDxt_account (@ModelAttribute("dxt_account") Dxt_accountDTO dxt_account){
+        dxt_accountService.save(dxt_account);
         return "redirect:/dxt_accounts";
     }
     @PostMapping ("/update/{id}")
-    public String updateDxt_account (@PathVariable(value = "id") Long id, @ModelAttribute("employee") Dxt_accountDTO dxtAccount){
-        dxt_accountService.updatedDxt_accountById(id,dxtAccount);
+    public String updateDxt_account (@PathVariable(value = "id") Long id, @ModelAttribute("dxt_account") Dxt_accountDTO dxt_account){
+        dxt_accountService.updatedDxt_accountById(id,dxt_account);
         return "redirect:/dxt_accounts";
     }
     @GetMapping("/delete/{id}")

@@ -18,19 +18,20 @@ public class Dxt_accountService {
         this.dxt_accountRepository = dxt_accountRepository;
     }
     public List<Dxt_account> fillAll(){
+
         return dxt_accountRepository.findAll();
     }
     public Optional<Dxt_accountDTO> findById(Long id){
-        Dxt_account employee = dxt_accountRepository.findById(id).orElse(null);
+        Dxt_account dxt_account = dxt_accountRepository.findById(id).orElse(null);
         Dxt_accountDTO dxt_accountDTO = new Dxt_accountDTO();
         dxt_accountDTO.setId(id);
-        dxt_accountDTO.setUser(employee.getUser());
-        dxt_accountDTO.setPass(employee.getPass());
-        dxt_accountDTO.setName(employee.getName());
-        dxt_accountDTO.setEmail(employee.getEmail());
-        dxt_accountDTO.setPhone(employee.getPhone());
-        dxt_accountDTO.setAddress(employee.getAddress());
-        dxt_accountDTO.setStatus(employee.isStatus());
+        dxt_accountDTO.setUser(dxt_account.getUser());
+        dxt_accountDTO.setPass(dxt_account.getPass());
+        dxt_accountDTO.setName(dxt_account.getName());
+        dxt_accountDTO.setEmail(dxt_account.getEmail());
+        dxt_accountDTO.setPhone(dxt_account.getPhone());
+        dxt_accountDTO.setAddress(dxt_account.getAddress());
+        dxt_accountDTO.setStatus(dxt_account.isStatus());
         return Optional.of(dxt_accountDTO);
     }
     public Boolean save(Dxt_accountDTO dxt_accountDTO){
